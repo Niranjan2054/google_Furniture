@@ -11,4 +11,4 @@ if(isset($_COOKIE['_auth_user'])){
 	setcookie('_auth_user', null, time()-60, "/");
 }
 session_destroy();
-setFlash('index');
+setFlash('login');

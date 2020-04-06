@@ -91,9 +91,9 @@
                                             <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
                                             <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
+                                            <a type="button" href="password-change" tabindex="0" class="dropdown-item">Change Password</a>
                                             <div tabindex="-1" class="dropdown-divider"></div>
-                                            <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                            <a type="button" href="logout" tabindex="0" class="dropdown-item">Log Out</a>
                                         </div>
                                     </div>
                                 </div>
