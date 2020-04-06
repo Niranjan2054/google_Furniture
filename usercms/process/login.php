@@ -4,7 +4,7 @@ debugger($_POST);
 $data = array();
 if (isset($_POST) && !empty($_POST)) {
 	if (isset($_POST['username']) && !empty($_POST['username'])) {
-		$data['username'] = filter_var($_POST['username'],FILTER_VALIDATE_EMAIL);
+		$data['username'] = sanitize($_POST['username']);
 		if ($data['username']) {
 			if (isset($_POST['password']) && !empty($_POST['password'])) {
 				$data['password']=sha1($data['username'].$_POST['password']);
@@ -12,7 +12,7 @@ if (isset($_POST) && !empty($_POST)) {
 				$user_info= $user->getUserByEmail($data['username']);
 				debugger($user_info);
 				debugger($data);
-				if (isset($user_info[0]->email) && !empty($user_info[0]->email)) {
+				if (isset($user_info[0]->username) && !empty($user_info[0]->username)) {
 					if ($user_info[0]->password ==$data['password']) {
 						if ($user_info[0]->role =="Admin") {
 							if ($user_info[0]->status == "Active") {
@@ -32,31 +32,29 @@ if (isset($_POST) && !empty($_POST)) {
 										'last_ip'=>$_SERVER['REMOTE_ADDR']
 								);	
 								$user->updateUser($args,$user_info[0]->id);
-								setFlash('../dashboard','success','You are successfully logged in. Welcome to the dashboard.');
+								setFlash('../index','success','You are successfully logged in. Welcome to the dashboard.');
 							}else{
-								setFlash('../','error','This account is not active. Do contact Adminstration.');
+								setFlash('../login','error','This account is not active. Do contact Adminstration.');
 							}
 						}else{
-							setFlash('../','error','You are not allowed to logged in Here.');
+							setFlash('../login','error','You are not allowed to logged in Here.');
 						}
 
 					}else{
-						setFlash('../','error','Password doesnot matched.');
+						setFlash('../login','error','Password doesnot matched.');
 					}
 				}
 				debugger($_SESSION);
-				setFlash('../','error','Email Doesnot Matched.');
-
-
+				setFlash('../login','error','Email Doesnot Matched.');
 			}else{
-				setFlash('../','error','Password Required.');
+				setFlash('../login','error','Password Required.');
 			}
 		}else{
-			setFlash('../','error','Invalid Username. Username must be Email Type.');
+			setFlash('../login','error','Invalid Username. Username must be Email Type.');
 		}
 	}else{
-		setFlash('../','error','Username Required');
+		setFlash('../login','error','Username Required');
 	}
 }else{
-	setFlash('../','error','Unauthorized Access');
+	setFlash('../login','error','Unauthorized Access');
 }

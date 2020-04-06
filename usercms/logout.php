@@ -1,6 +1,6 @@
 <?php 
 require_once $_SERVER['DOCUMENT_ROOT'].'config/init.php';
-$user = new User();
+$user = new user();
 $args = array(
     'session_token' => ""
 );

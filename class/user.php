@@ -12,7 +12,7 @@ class user extends database{
 			// 'fields'=>array('username','email','password','role','status'),
 			// 'fields'=>"username, email, password, role, status"
 			'where'=>array(
-				'and'=>array('email'=>$username)
+				'and'=>array('username'=>$username)
 				// 'and'=>array('status'=>'Active','role'=>'Admin'),
 			)
 			// 'where' => "email = '".$username."'"

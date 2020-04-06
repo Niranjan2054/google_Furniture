@@ -21,9 +21,9 @@ if (!isset($_SESSION['token']) || empty($_SESSION['token'])) {
         'last_ip'=>$_SERVER['REMOTE_ADDR']
     );  
     $user->updateUser($args,$user_info[0]->id);
-    setFlash('../dashboard','success','You are successfully logged in. Welcome to the dashboard.');
+    setFlash('../index','success','You are successfully logged in. Welcome to the dashboard.');
   }else{
-    setFlash('index','error','You are not logged in. Please login');
+    setFlash('login','error','You are not logged in. Please login');
   }
 }  
 

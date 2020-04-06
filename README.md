@@ -1,7 +1,7 @@
-# BookStore
+# Google Furniture 
 **Verion 1.0.0**
 
-This is the web designing and development project for Book Store.
+This is the web designing and development project for Google Furniture.
 
 ---
 ## Requirements for local setup:
@@ -12,12 +12,7 @@ This is the web designing and development project for Book Store.
 ## Contributor
 [Niranjan Bekoju]('bekojuniranjan@gmail.com')
 
-[Sunil Banmala]('banmalasunil0@gmail.com')
-
-[Luja shakya]('lujashakya.com.np')
-
-Anusha Bajracharya
 ## Copy Right 
-© Khwopa College of Engineering , Liwali Bhaktapur
+© Niranjan Bekoju , Liwali Bhaktapur
 
 

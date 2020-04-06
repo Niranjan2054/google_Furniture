@@ -10,19 +10,19 @@ if ($_SERVER['SERVER_ADDR']=='127.0.0.1' || $_SERVER['SERVER_ADDR']=="::1") {
 if (ENVIRONMENT == 'DEVELOPMENT') {
 	error_reporting(E_ALL);
 	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'bookstore');
+	define('DB_NAME', 'googlef');
 	define('DB_USER', 'root');
 	define('DB_PWD', '');
-	define('SITE_URL', 'http://www.bookstore.com/');
+	define('SITE_URL', 'http://www.googlef.com/');
 }else{
 	error_reporting(0);
 	define('DB_HOST', 'sql212.byethost.com');
 	define('DB_NAME', 'b18_21176053_neofusion');
 	define('DB_USER', 'b18_21176053');
-	define('DB_PWD', 'Damage25');
-	define('SITE_URL', 'http://test.niranjan-bekoju.com.np/');
+	define('DB_PWD', '');
+	define('SITE_URL', 'http://googlef.com.np/');
 }
-define('CMS_PATH', SITE_URL.'cms/');
+define('CMS_PATH', SITE_URL.'usercms/');
 define('ASSESTS_PATH', CMS_PATH.'assets/');
 define('INCLUDE_PATH', CMS_PATH.'inc/');
 define('PLUGIN_PATH', CMS_PATH.'plugins/');
@@ -38,6 +38,6 @@ define('CLASS_PATH', $_SERVER['DOCUMENT_ROOT'].'class/');
 define('CONFIG_PATH', $_SERVER['DOCUMENT_ROOT'].'config/');
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT'].'upload/');
 define('UPLOAD_URL',SITE_URL.'/upload/');
-define('SITE_NAME', 'Book Store');
+define('SITE_NAME', 'Google Furniture');
 define('UPLOAD_DIR', $_SERVER['DOCUMENT_ROOT'].'upload/');
 define('ALLOWED_EXT',array('jpg','jpeg','png','gif','svg','bmp','json'));
