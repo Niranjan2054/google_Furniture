@@ -8,7 +8,7 @@ $mail = new PHPMailer(true);
 $data = array();
 if (isset($_POST) && !empty($_POST)) {
 	if (isset($_POST['username']) && !empty($_POST['username'])) {
-		$data['username'] = filter_var($_POST['username'],FILTER_VALIDATE_EMAIL);
+		$data['username'] = sanitize($_POST['username']);
 		if ($data['username']) {
 			$user_info= $user->getUserByEmail($data['username']);
 			if ($user_info) {
@@ -22,7 +22,7 @@ if (isset($_POST) && !empty($_POST)) {
 				$message .= "<a href='".SITE_URL.'reset?token='.$password_token."'>".SITE_URL.'reset?token='.$password_token."</a>";
 				$message .= "<br> If you did not request for the password change, please ignore this message.<br>";
 				$message .= "Regards,<br>";
-				$message .= "MeroPasal Administration";
+				$message .= "Google Furniture Administration";
 				$mail = sendMessage($user_info[0]->email,'Change Password Token',$message,$mail);
 				// debugger($mail,true);
 				if ($mail) {

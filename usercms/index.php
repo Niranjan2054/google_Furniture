@@ -1,5 +1,8 @@
 <?php include 'inc/header.php'; ?>
-<?php include 'inc/sidebar.php'; ?>
+<?php 
+    include 'inc/sidebar.php'; 
+    include 'inc/checklogin.php';
+?>
 
 <!-- Main Body -->
                 <div class="app-main__outer">

@@ -1,5 +1,8 @@
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+    if (isset($_SESSION['token']) && !empty($_SESSION['token']) || isset($_COOKIE['_auth_user'])) {
+      setFlash('index','success','You are already logged in.');
+    }  
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -25,8 +28,9 @@
           <i class="fas fa-lock"></i>
           <input type="password" placeholder="Password" name="password">
         </div>
-        <input type="checkbox" name="remember"> keep me sign in
+        <input type="checkbox" name="remember"> keep me sign in <br><br>
         <input type="submit" class="btn" value="Sign in">
+        <a href="reset-password" style="color: white">Forgot Password?</a>
       </div>
       </form>
   </body>

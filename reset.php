@@ -14,36 +14,34 @@ if (isset($_GET) && isset($_GET['token']) && !empty($_GET['token'])) {
     	$_SESSION['password_reset_id'] = $user_info[0]->id;
     }
     ?>
-     <div>
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-            <?php flashMessage(); ?>
-            <form method="post" action="process/reset">
-              <h1>Password Change</h1>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Re-Enter Password" name="new-password" id="newpassword" required="" />
-				      <span class="hidden" id="err_pass"></span>
-              </div>
-              <div>
-                <button class="btn btn-success" id="button">Change Password</button>
-              </div>
-              <div class="clearfix"></div>
-              <div class="separator">
-                <div class="clearfix"></div>
-                <br />
-                <div>
-                  <p>&copy; <?php echo date('Y'); ?> All Rights Reserved.</p>
-                </div>
-              </div>
-            </form>
-          </section>
+     
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="usercms/style.css">
+    <link rel="stylesheet" href="<?php echo CSS_PATH; ?>bootstrap.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Password Change</h1>
+      <form action="process/reset" method="post">
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input type="text" placeholder="Password" name="password">
         </div>
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input type="text" placeholder="Re-Enter Password" name="new-password">
+        </div>
+        <input type="submit" class="btn" value="Change Password">
       </div>
-    </div>
+      </form>
+  </body>
+</html>
     <?php
 
 }else{
@@ -64,3 +62,5 @@ if (isset($_GET) && isset($_GET['token']) && !empty($_GET['token'])) {
 		}
 	});
 </script>
+
+

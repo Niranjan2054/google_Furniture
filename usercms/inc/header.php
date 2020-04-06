@@ -1,6 +1,5 @@
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
-    include 'inc/checklogin.php';
  ?>
 <!doctype html>
 <html lang="en">

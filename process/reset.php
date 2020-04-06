@@ -15,7 +15,7 @@
 	    if (!isset($user_info) || empty($user_info)) {
 			setFlash('../login','error',"Invalid reset token. Please send again");
 	    }
-	    $en_password = sha1($user_info[0]->email.$_POST['password']);
+	    $en_password = sha1($user_info[0]->username.$_POST['password']);
 
 	    $args=array(
 	    	'password' => $en_password,
@@ -25,7 +25,7 @@
 	    debugger($success);
 	    if ($success) {
 	    	if ($user_info[0]->role=="Admin") {
-	    		setFlash('../cms/index','success','Password changed successfully');
+	    		setFlash('../usercms/login','success','Password changed successfully');
 	    	}else{
 	    		echo "check";
 	    		exit;
