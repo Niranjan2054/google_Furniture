@@ -14,8 +14,8 @@
                                     <div class="page-title-icon">
                                         <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
                                     </div>
-                                    <div>Analytics Dashboard
-                                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                                    <div>Customer
+                                        <div class="page-title-subheading">Create, Edit and Delete Customer. Add some transaction here.
                                         </div>
                                     </div>
                                 </div>
@@ -23,13 +23,9 @@
                                 <div class="page-title-actions">
                                     
                                     <div class="d-inline-block dropdown">
-                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                            <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                <i class="fa fa-business-time fa-w-20"></i>
-                                            </span>
-                                            Buttons
-                                        </button>
-                                       
+                                        <a href="addcustomer" type="button" class="btn-shadow  btn btn-info">
+                                            Add Customer
+                                        </a>
                                     </div>
                                 </div>    
                             </div>
@@ -524,6 +520,8 @@
                                 </div>
                             </div>
                         </div>
+
+
 <?php 
     include 'inc/footer.php'
  ?>
