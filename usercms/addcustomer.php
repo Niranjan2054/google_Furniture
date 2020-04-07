@@ -2,6 +2,25 @@
     include 'inc/header.php';
     include 'inc/sidebar.php';
     include 'inc/checklogin.php';
+    if (isset($_GET) && !empty($_GET)) {
+        $Customer_id = (int)$_GET['id'];
+        if ($Customer_id) {
+            $pass = substr(md5('Customer-Edit'.$_SESSION['token'].'id='.$Customer_id), 3,15);
+            if($pass == $_GET['act']){
+                $Customer = new customer();
+                $customer = $Customer->getCustomerById($Customer_id);
+                if ($customer) {
+                    $customer = $customer[0];
+                }else{
+                    setFlash('./customer','error','Data not found');
+                }
+            }else{
+                setFlash('./login','error','Unauthorized access or Invalid Action');
+            }
+        }else{
+            setFlash('./customer','error','Invalid ID');
+        }
+    }
  ?>
 <!doctype html>
 <link href="https://demo.dashboardpack.com/architectui-html-pro/main.87c0748b313a1dda75f5.css" rel="stylesheet">
@@ -49,15 +68,18 @@
                                                     </div> -->
                                                     <div class="position-relative form-group">
                                                         <label for="name" class="">Name</label>
-                                                        <input name="name" id="name" placeholder="Customer Name" type="text" class="form-control" required="required">
+                                                        <input name="name" id="name" placeholder="Customer Name" type="text" class="form-control" required="required" value="<?php echo((isset($customer->name) && !empty($customer->name))?$customer->name:'') ?>">
                                                     </div>
                                                     <div class="position-relative form-group">
                                                         <label for="contact" class="">contact</label>
-                                                        <input name="contact" id="contact" placeholder="Customer contact" type="text" class="form-control">
+                                                        <input name="contact" id="contact" placeholder="Customer contact" type="text" class="form-control" value="<?php echo((isset($customer->contact) && !empty($customer->contact))?$customer->contact:'') ?>">
                                                     </div>
                                                     <div class="position-relative form-group">
                                                         <label for="address" class="">Address</label>
-                                                        <input name="address" id="address" placeholder="Customer Address" type="text" class="form-control">
+                                                        <input name="address" id="address" placeholder="Customer Address" type="text" class="form-control" value="<?php echo((isset($customer->address) && !empty($customer->address))?$customer->address:'') ?>">
+                                                    </div>
+                                                    <div class="position-relative form-group" style="display: none;">
+                                                        <input name="id" id="id" placeholder="Customer Address" type="text" class="form-control" value="<?php echo((isset($customer->id) && !empty($customer->id))?$customer->id:'') ?>">
                                                     </div>
                                                     <!-- <div class="form-row">
                                                         <div class="col-md-6">

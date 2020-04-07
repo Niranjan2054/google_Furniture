@@ -1,9 +1,0 @@
-Apr 07, 2020 11:43:06 AM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 11:45:01 AM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 11:45:12 AM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 11:57:03 AM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 11:58:09 AM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 12:24:14 PM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 12:25:30 PM : ( run Query) : SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'last_login'
-Apr 07, 2020 12:25:43 PM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.customers' doesn't exist
-Apr 07, 2020 12:26:27 PM : ( run Query) : SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'last_login'
