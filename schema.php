@@ -19,6 +19,17 @@
 		)",
 		"user_unique" => "ALTER TABLE users ADD UNIQUE(email)",
 		'alter_user'	=> "ALTER TABLE `users` ADD `last_login` DATETIME NULL DEFAULT NULL AFTER `session_token`, ADD `last_ip` VARCHAR(100) NULL DEFAULT NULL AFTER `last_login`",
+		"cutomer" => "CREATE TABLE  IF NOT EXISTS cutomers
+		(
+			id int not null AUTO_INCREMENT PRIMARY KEY,
+			name varchar(50),
+			contact varchar(15),
+			address varchar(100),
+			added_by int,
+			status enum('Active','Inactive') default 'Active',
+			created_date datetime default current_timestamp,
+			updated_date datetime on update current_timestamp
+		)",
 		
 	);
 	foreach ($table as $key => $sql) {
