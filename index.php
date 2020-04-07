@@ -1,4 +1,4 @@
 <?php 
 	ob_start();
-	@header('location: /usercms')
+	@header('location: /usercms/login')
 ?>

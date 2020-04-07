@@ -19,7 +19,7 @@
 		)",
 		"user_unique" => "ALTER TABLE users ADD UNIQUE(email)",
 		'alter_user'	=> "ALTER TABLE `users` ADD `last_login` DATETIME NULL DEFAULT NULL AFTER `session_token`, ADD `last_ip` VARCHAR(100) NULL DEFAULT NULL AFTER `last_login`",
-		"cutomer" => "CREATE TABLE  IF NOT EXISTS cutomers
+		"customer" => "CREATE TABLE  IF NOT EXISTS customers
 		(
 			id int not null AUTO_INCREMENT PRIMARY KEY,
 			name varchar(50),

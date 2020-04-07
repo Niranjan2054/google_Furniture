@@ -17,6 +17,9 @@
                                     <div>Customer
                                         <div class="page-title-subheading">Create Customer
                                         </div>
+                                        <?php 
+                                            flashMessage();
+                                         ?>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +32,7 @@
                                     <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body"><h5 class="card-title">Add Customer Info</h5>
-                                                <form class="">
+                                                <form class="" method="post" action="process/customer">
                                                    <!--  <div class="form-row">
                                                         <div class="col-md-6">
                                                             <div class="position-relative form-group">
@@ -74,7 +77,6 @@
                                                         <input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
                                                         <label for="exampleCheck" class="form-check-label">Check me out</label>
                                                     </div> -->
-                                                    <button class="mt-2 btn btn-info" type="clear">Clear</button>
                                                     <button class="mt-2 btn btn-primary" type="submit">Submit</button>
                                                 </form>
                                             </div>
