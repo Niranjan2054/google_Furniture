@@ -30,6 +30,17 @@
 			created_date datetime default current_timestamp,
 			updated_date datetime on update current_timestamp
 		)",
+		"furniture" => "CREATE TABLE  IF NOT EXISTS furnitures
+		(
+			id int not null AUTO_INCREMENT PRIMARY KEY,
+			name varchar(50),
+			saleprice int,
+			purchaseprice int,
+			added_by int,
+			status enum('Active','Inactive') default 'Active',
+			created_date datetime default current_timestamp,
+			updated_date datetime on update current_timestamp
+		)",
 		
 	);
 	foreach ($table as $key => $sql) {

@@ -1,0 +1,6 @@
+Apr 07, 2020 09:29:03 PM : ( DB Select Data) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.furnitures' doesn't exist
+Apr 07, 2020 09:33:38 PM : ( DB Select Data) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.furnitures' doesn't exist
+Apr 07, 2020 09:34:15 PM : ( DB Select Data) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.furnitures' doesn't exist
+Apr 07, 2020 09:34:43 PM : ( DB Select Data) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.furnitures' doesn't exist
+Apr 07, 2020 09:39:28 PM : ( run Query) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'googlef.furnitures' doesn't exist
+Apr 07, 2020 09:39:46 PM : ( run Query) : SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'last_login'

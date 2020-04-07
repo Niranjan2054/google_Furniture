@@ -14,8 +14,8 @@
                                     <div class="page-title-icon">
                                         <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
                                     </div>
-                                    <div>Customer
-                                        <div class="page-title-subheading">Create, Edit and Delete Customer. Add some transaction here.
+                                    <div>Furniture
+                                        <div class="page-title-subheading">Create, Edit and Delete Furniture.
                                         </div>
                                         <?php 
                                             flashMessage();
@@ -26,8 +26,8 @@
                                 <div class="page-title-actions">
                                     
                                     <div class="d-inline-block dropdown">
-                                        <a href="addcustomer" type="button" class="btn-shadow  btn btn-info">
-                                            Add Customer
+                                        <a href="addfurniture" type="button" class="btn-shadow  btn btn-info">
+                                            Add Furniture
                                         </a>
                                     </div>
                                 </div>    
@@ -42,33 +42,30 @@
                                         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                             <thead>
                                             <tr>
-                                                <th>Account no.</th>
+                                                <th>S.N</th>
                                                 <th>Name</th>
-                                                <th>Contact</th>
-                                                <th>Address</th>
-                                                <th>Transaction</th>
+                                                <th>Purchase Price</th>
+                                                <th>Sale Price</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                                 <?php 
-                                                    $Customer = new customer();
-                                                    $customers = $Customer->getallCustomer(['order'=>'ASC']);
-                                                    // debugger($customers);
-                                                    if ($customers) {
-                                                        foreach ($customers as $key => $customer) {
+                                                    $Furniture = new furniture();
+                                                    $furnitures = $Furniture->getallFurniture(['order'=>'ASC']);
+                                                    if ($furnitures) {
+                                                        foreach ($furnitures as $key => $furniture) {
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo $customer->id; ?></td>
-                                                        <td><?php echo $customer->name; ?></td>
-                                                        <td><?php echo $customer->contact; ?></td>
-                                                        <td><?php echo $customer->address; ?></td>
-                                                        <td><a href="javascript:;" class="btn btn-shadow btn-primary">Transaction</a></td>
+                                                        <td><?php echo $key+1; ?></td>
+                                                        <td><?php echo $furniture->name; ?></td>
+                                                        <td><?php echo $furniture->purchaseprice; ?></td>
+                                                        <td><?php echo $furniture->saleprice; ?></td>
                                                         <td>
-                                                            <a href="addcustomer?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Customer-Edit'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " class="btn btn-shadow btn-secondary">
+                                                            <a href="addfurniture?id=<?php echo $furniture->id ?>&amp;act=<?php  echo(substr(md5('Furniture-Edit'.$_SESSION['token'].'id='.$furniture->id), 3,15))?> " class="btn btn-shadow btn-secondary">
                                                                 Edit
                                                             </a>
-                                                            <a href="process/customer?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Customers-'.$customer->id.'-'.$_SESSION['token']),3,15))?> " class="btn btn-shadow btn-danger">
+                                                            <a href="process/furniture?id=<?php echo $furniture->id ?>&amp;act=<?php  echo(substr(md5('Furnitures-'.$furniture->id.'-'.$_SESSION['token']),3,15))?> " class="btn btn-shadow btn-danger">
                                                                 Delete
                                                             </a>
                                                         </td>
