@@ -17,6 +17,9 @@
                                     <div>Analytics Dashboard
                                         <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                                         </div>
+                                        <?php 
+                                            flashMessage();
+                                         ?>
                                     </div>
                                 </div>
 
