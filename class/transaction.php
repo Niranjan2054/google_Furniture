@@ -44,6 +44,8 @@ class transaction extends database{
 			'fields' => array(
 				'(SELECT name FROM customers WHERE id = customer_id) as customername',
 				'(SELECT furniturename from furnitures WHERE id = furniture_id) as furniturename',
+				'(SELECT saleprice from furnitures WHERE id = furniture_id) as saleprice',
+				'(SELECT purchaseprice from furnitures WHERE id = furniture_id) as purchaseprice',
 				'no_of_piece',
 				'accountType',
 				'type',

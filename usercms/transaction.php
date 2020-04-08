@@ -46,6 +46,9 @@
                                                 <th>S.N</th>
                                                 <th>Customer name</th>
                                                 <th>Furniture name</th>
+                                                <th>Account Type</th>
+                                                <th>Transaction Date</th>
+                                                <th>Type</th>
                                                 <th>no. of piece</th>
                                                 <th>Price</th>
                                                 <th>Total Price</th>
@@ -57,14 +60,23 @@
                                                     $Transaction = new transaction();
                                                     $transactions = $Transaction->getTransactionByCutomerId($customer->id);
                                                     if ($transactions) {
-                                                        debugger($transactions,true);
                                                         foreach ($transactions as $key => $transaction) {
+                                                            if ($transaction->type == 'sale') {
+                                                                $price = $transaction->saleprice;
+                                                            }else{
+                                                                $price = $transaction->purchaseprice;
+                                                            }
                                                     ?>
                                                     <tr>
                                                         <td><?php echo $key+1; ?></td>
-                                                        <td><?php echo $transaction->name; ?></td>
-                                                        <td><?php echo $transaction->purchaseprice; ?></td>
-                                                        <td><?php echo $transaction->saleprice; ?></td>
+                                                        <td><?php echo $transaction->customername; ?></td>
+                                                        <td><?php echo $transaction->furniturename; ?></td>
+                                                        <td><?php echo $transaction->accountType; ?></td>
+                                                        <td><?php echo $transaction->transaction_date; ?></td>
+                                                        <td><?php echo $transaction->type; ?></td>
+                                                        <td><?php echo $transaction->no_of_piece; ?></td>
+                                                        <td><?php echo $price; ?></td>
+                                                        <td><?php echo $price*$transaction->no_of_piece; ?></td>
                                                         <td>
                                                             <a href="addtransaction?id=<?php echo $transaction->id ?>&amp;act=<?php  echo(substr(md5('Transaction-Edit'.$_SESSION['token'].'id='.$transaction->id), 3,15))?> " class="btn btn-shadow btn-secondary">
                                                                 Edit
