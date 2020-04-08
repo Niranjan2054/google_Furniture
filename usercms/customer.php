@@ -63,9 +63,9 @@
                                                         <td><?php echo $customer->name; ?></td>
                                                         <td><?php echo $customer->contact; ?></td>
                                                         <td><?php echo $customer->address; ?></td>
-                                                        <td><a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " class="btn btn-shadow btn-primary">Transaction</a></td>
+                                                        <td><a href="transaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " class="btn btn-shadow btn-primary">Transaction</a></td>
                                                         <td>
-                                                            <a href="addcustomer?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Customer-Edit'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " class="btn btn-shadow btn-secondary">
+                                                            <a href="customer?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Customer-Edit'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " class="btn btn-shadow btn-secondary">
                                                                 Edit
                                                             </a>
                                                             <a href="process/customer?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Customers-'.$customer->id.'-'.$_SESSION['token']),3,15))?> " class="btn btn-shadow btn-danger">

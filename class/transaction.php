@@ -39,4 +39,23 @@ class transaction extends database{
 			);
 		return $this->deletedata($args,$is_die);
 	}
+	public function getTransactionByCutomerId($customer_id,$is_die = false){
+		$args = array(
+			'fields' => array(
+				'(SELECT name FROM customers WHERE id = customer_id) as customername',
+				'(SELECT furniturename from furnitures WHERE id = furniture_id) as furniturename',
+				'no_of_piece',
+				'accountType',
+				'type',
+				'transaction_date',
+			),
+			'where' =>array(
+					'and' => array(
+						'customer_id' => $customer_id
+					)
+				)
+		);
+		return $this->selectdata($args,$is_die);
+	}
 }
+

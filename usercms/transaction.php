@@ -2,6 +2,7 @@
     include 'inc/header.php';
     include 'inc/sidebar.php';
     include 'inc/checklogin.php';
+    include 'inc/getUser.php'
  ?>
 <!doctype html>
 <link href="https://demo.dashboardpack.com/architectui-html-pro/main.87c0748b313a1dda75f5.css" rel="stylesheet">
@@ -26,7 +27,7 @@
                                 <div class="page-title-actions">
                                     
                                     <div class="d-inline-block dropdown">
-                                        <a href="addtransaction" type="button" class="btn-shadow  btn btn-info">
+                                        <a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " type="button" class="btn-shadow  btn btn-info">
                                             Add Transaction
                                         </a>
                                     </div>
@@ -54,8 +55,9 @@
                                             <tbody>
                                                 <?php 
                                                     $Transaction = new transaction();
-                                                    $transactions = $Transaction->getallTransaction(['order'=>'ASC']);
+                                                    $transactions = $Transaction->getTransactionByCutomerId($customer->id);
                                                     if ($transactions) {
+                                                        debugger($transactions,true);
                                                         foreach ($transactions as $key => $transaction) {
                                                     ?>
                                                     <tr>

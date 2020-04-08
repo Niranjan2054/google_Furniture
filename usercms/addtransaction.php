@@ -2,26 +2,7 @@
     include 'inc/header.php';
     include 'inc/sidebar.php';
     include 'inc/checklogin.php';
-    if (isset($_GET) && !empty($_GET)) {
-        $Customer_id = (int)$_GET['id'];
-        if ($Customer_id) {
-            $pass = substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$Customer_id), 3,15);
-            if($pass == $_GET['act']){
-                $Customer = new customer();
-                $customer = $Customer->getCustomerById($Customer_id);
-                if ($customer) {
-                    $customer = $customer[0];
-                    // debugger($customer,true);
-                }else{
-                    setFlash('./customer','error','Data not found');
-                }
-            }else{
-                setFlash('./login','error','Unauthorized access or Invalid Action');
-            }
-        }else{
-            setFlash('./customer','error','Invalid ID');
-        }
-    }
+    include 'inc/getUser.php';
  ?>
 <!doctype html>
 <link href="https://demo.dashboardpack.com/architectui-html-pro/main.87c0748b313a1dda75f5.css" rel="stylesheet">
@@ -46,6 +27,7 @@
                                             <h6>Address: <?php echo $customer->address; ?></h4>
                                         </div>
                                         <?php
+                                            flashMessage();
                                             }
                                          ?>
                                     </div>
@@ -147,7 +129,7 @@
                                                         <label for="" class="">Credit</label>
                                                     </div>
                                                      <div class="position-relative form-group col-md-6" style="display: none;">
-                                                        <input name="type" id="type" value="purchase" type="text" >
+                                                        <input name="type" id="type" value="sale" type="text" >
                                                     </div>
                                                     <div class="position-relative form-group col-md-6" style="display: none;">
                                                         <input name="customer_id" id="customer_id" value="<?php echo $customer->id ?>" type="text" >
