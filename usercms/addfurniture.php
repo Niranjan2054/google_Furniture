@@ -54,7 +54,7 @@
                                                 <form class="" method="post" action="process/furniture">
                                                     <div class="position-relative form-group">
                                                         <label for="name" class="">Name</label>
-                                                        <input name="name" id="name" placeholder="Furniture Name" type="text" class="form-control" required="required" value="<?php echo((isset($furniture->name) && !empty($furniture->name))?$furniture->name:'') ?>">
+                                                        <input name="furniturename" id="furniturename" placeholder="Furniture Name" type="text" class="form-control" required="required" value="<?php echo((isset($furniture->furniturename) && !empty($furniture->furniturename))?$furniture->furniturename:'') ?>">
                                                     </div>
                                                     <div class="position-relative form-group">
                                                         <label for="purchaseprice" class="">Purchase Price</label>

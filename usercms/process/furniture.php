@@ -5,7 +5,7 @@
 	$furniture = new furniture();
 	if (isset($_POST) && !empty($_POST)) {
 		$data = array(
-					'name' => sanitize($_POST['name']),
+					'furniturename' => sanitize($_POST['furniturename']),
 					'saleprice' => (int)($_POST['saleprice']),
 					'purchaseprice' => (int)($_POST['purchaseprice']),
 					'added_by' => $_SESSION['user_id']

@@ -58,7 +58,7 @@
                                                     ?>
                                                     <tr>
                                                         <td><?php echo $key+1; ?></td>
-                                                        <td><?php echo $furniture->name; ?></td>
+                                                        <td><?php echo $furniture->furniturename; ?></td>
                                                         <td><?php echo $furniture->purchaseprice; ?></td>
                                                         <td><?php echo $furniture->saleprice; ?></td>
                                                         <td>

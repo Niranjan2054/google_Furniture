@@ -56,6 +56,13 @@
                                         Furniture
                                     </a>
                                 </li>
+                                <li class="app-sidebar__heading">Transaction</li>
+                                <li>
+                                    <a href="transaction">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Transaction
+                                    </a>
+                                </li>
                                 <li class="app-sidebar__heading">Forms</li>
                                 <li>
                                     <a href="javascript:;">
