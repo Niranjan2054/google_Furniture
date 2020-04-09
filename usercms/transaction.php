@@ -62,8 +62,6 @@
                                             </thead>
                                             <tbody>
                                                 <?php 
-                                                    $Transaction = new transaction();
-                                                    $transactions = $Transaction->getTransactionByCutomerId($customer->id);
                                                     if ($transactions) {
                                                         foreach ($transactions as $key => $transaction) {
                                                             if ($transaction->type == 'sale') {
@@ -83,7 +81,7 @@
                                                         <td><?php echo $price; ?></td>
                                                         <td><?php echo $price*$transaction->no_of_piece; ?></td>
                                                         <td>
-                                                            <a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?>&amp;transaction_id=<?php echo $transaction->id ?>" class="btn btn-shadow btn-secondary">
+                                                            <a href="addtransaction?id=<?php echo $transaction->customer_id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$transaction->customer_id), 3,15))?>&amp;transaction_id=<?php echo $transaction->id ?>" class="btn btn-shadow btn-secondary">
                                                                 Edit
                                                             </a>
                                                             <a href="login?id=<?php echo $transaction->id ?>&amp;act=<?php  echo(substr(md5('Delete-Transactions-'.$transaction->id.'-'.$_SESSION['token']),3,15))?>&amp;dir=transaction" class="btn btn-shadow btn-danger">

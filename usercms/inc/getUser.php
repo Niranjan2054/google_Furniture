@@ -1,6 +1,5 @@
 <?php 
-
-if (isset($_GET) && !empty($_GET)) {
+    if (isset($_GET) && !empty($_GET)) {
         $Customer_id = (int)$_GET['id'];
         if ($Customer_id) {
             $pass = substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$Customer_id), 3,15);
@@ -14,6 +13,9 @@ if (isset($_GET) && !empty($_GET)) {
                         $Transaction = new transaction();
                         $transaction_info = $Transaction->getTransactionById($transaction_id);
                         $transaction_info=$transaction_info[0];
+                    }else{
+                        $Transaction = new transaction();
+                        $transactions = $Transaction->getTransactionByCutomerId($customer->id);
                     }
                 }else{
                     setFlash('./customer','error','Data not found');
@@ -25,6 +27,7 @@ if (isset($_GET) && !empty($_GET)) {
             setFlash('./customer','error','Invalid ID');
         }
     }else{
-        setFlash('./customer','error','Select Customer First');
+        $Transaction = new transaction();
+        $transactions = $Transaction->getallTransaction();
     }
 ?>

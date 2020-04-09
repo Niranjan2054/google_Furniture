@@ -9,6 +9,22 @@ class transaction extends database{
 	}
 	
 	public function getallTransaction($args=array(),$is_die=false){
+		$args = array(
+			'fields' => array(
+				'id',
+				'customer_id',
+				'furniture_id',
+				'(SELECT name FROM customers WHERE id = customer_id) as customername',
+				'(SELECT furniturename from furnitures WHERE id = furniture_id) as furniturename',
+				'(SELECT saleprice from furnitures WHERE id = furniture_id) as saleprice',
+				'(SELECT purchaseprice from furnitures WHERE id = furniture_id) as purchaseprice',
+				'no_of_piece',
+				'accountType',
+				'type',
+				'transaction_date',
+			),
+			'order' => 'ASC'
+		);
 		return $this->selectdata($args,$is_die);
 	}
 	public function updateTransaction($data, $transactionid, $is_die=false){
