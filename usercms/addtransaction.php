@@ -90,6 +90,9 @@
                                                     <div class="position-relative form-group col-md-6" style="display: none;">
                                                         <input name="customer_id" id="customer_id" value="<?php echo $customer->id ?>" type="text" >
                                                     </div>
+                                                    <div class="position-relative form-group col-md-6" style="display: none;">
+                                                        <input name="id" id="id" value="<?php echo ((isset($transaction_info->id) && !empty($transaction_info->id))?$transaction_info->id:'') ?>" type="text" >
+                                                    </div>
                                                     <button class="mt-2 btn btn-primary">Submit</button>
                                                 </form>
                                             </div>
@@ -133,6 +136,9 @@
                                                     </div>
                                                     <div class="position-relative form-group col-md-6" style="display: none;">
                                                         <input name="customer_id" id="customer_id" value="<?php echo $customer->id ?>" type="text" >
+                                                    </div>
+                                                    <div class="position-relative form-group col-md-6" style="display: none;">
+                                                        <input name="id" id="id" value="<?php echo ((isset($transaction_info->id) && !empty($transaction_info->id))?$transaction_info->id:'') ?>" type="text" >
                                                     </div>
                                                     <button class="mt-2 btn btn-primary">Submit</button>
                                                 </form>
