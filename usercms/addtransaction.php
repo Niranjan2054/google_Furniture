@@ -40,18 +40,18 @@
                             <div class="app-main__inner">
                                 <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
                                     <li class="nav-item">
-                                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
+                                        <a role="tab" class="nav-link <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'active':'') ?>" id="tab-0" data-toggle="tab" href="#tab-content-0">
                                             <span>Purchase</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1">
+                                        <a role="tab" class="nav-link <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'':'active') ?>" id="tab-1" data-toggle="tab" href="#tab-content-1">
                                             <span>Sale</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                                    <div class="tab-pane tabs-animation fade <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'show':'') ?> <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'active':'') ?>" id="tab-content-0" role="tabpanel">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body"><h5 class="card-title">Purchases</h5>
                                                 <form method="post" action="process/transaction">
@@ -65,7 +65,7 @@
                                                             if ($furnitures) {
                                                                 foreach ($furnitures as $key => $furniture) {
                                                         ?>
-                                                            <option value="<?php echo $furniture->id ?>"><?php echo $furniture->furniturename; ?></option>
+                                                            <option value="<?php echo $furniture->id ?> " <?php echo (($transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
                                                         <?php
                                                                 }
                                                             }
@@ -75,13 +75,13 @@
                                                     
                                                     <div class="position-relative form-group col-md-6">
                                                         <label for="" class="form-check-label">no. of piece</label>
-                                                        <input name="no_of_piece" id="no_of_piece" type="number" class="form-control" min="0">
+                                                        <input name="no_of_piece" id="no_of_piece" type="number" class="form-control" min="0" value="<?php echo((isset($transaction_info->no_of_piece) && !empty($transaction_info->no_of_piece))?$transaction_info->no_of_piece:'') ?>">
                                                     </div>
 
                                                     <div class="position-relative form-check">
-                                                        <input name="accountType" id="accountType" type="radio" class="" value="debit">
+                                                        <input name="accountType" id="accountType" type="radio" class="" value="debit" <?php echo((isset($transaction_info->accountType) && !empty($transaction_info->accountType) && $transaction_info->accountType == 'Debit')?'checked':'') ?>>
                                                         <label for="" class="">Debit</label>
-                                                        <input name="accountType" id="accountType" type="radio" class="" value="credit">
+                                                        <input name="accountType" id="accountType" type="radio" class="" value="credit" <?php echo((isset($transaction_info->accountType) && !empty($transaction_info->accountType) && $transaction_info->accountType == 'Credit')?'checked':'') ?>>
                                                         <label for="" class="">Credit</label>
                                                     </div>
                                                      <div class="position-relative form-group col-md-6" style="display: none;">
@@ -95,7 +95,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane tabs-animation fade" id="tab-content-1" role="tabpanel">
+                                    <div class="tab-pane tabs-animation fade <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'':'show') ?> <?php echo(((isset($transaction_info->type) && !empty($transaction_info->type) && $transaction_info->type=='purchase') ||  (!isset($transaction_info->type) || empty($transaction_info->type)))?'':'active') ?>" id="tab-content-1" role="tabpanel">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body"><h5 class="card-title">Sales</h5>
                                                 <form method="post" action="process/transaction">
@@ -109,7 +109,7 @@
                                                             if ($furnitures) {
                                                                 foreach ($furnitures as $key => $furniture) {
                                                         ?>
-                                                            <option value="<?php echo $furniture->id ?>"><?php echo $furniture->furniturename; ?></option>
+                                                            <option value="<?php echo $furniture->id ?>" <?php echo (($transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
                                                         <?php
                                                                 }
                                                             }
@@ -119,13 +119,13 @@
                                                     
                                                     <div class="position-relative form-group col-md-6">
                                                         <label for="" class="form-check-label">no. of piece</label>
-                                                        <input name="no_of_piece" id="no_of_piece" type="number" class="form-control" min="0">
+                                                        <input name="no_of_piece" id="no_of_piece" type="number" class="form-control" min="0" value="<?php echo((isset($transaction_info->no_of_piece) && !empty($transaction_info->no_of_piece))?$transaction_info->no_of_piece:'') ?>">
                                                     </div>
 
                                                     <div class="position-relative form-check">
-                                                        <input name="accountType" id="accountType" type="radio" class="" value="debit">
+                                                        <input name="accountType" id="accountType" type="radio" class="" value="debit" <?php echo((isset($transaction_info->accountType) && !empty($transaction_info->accountType) && $transaction_info->accountType == 'Debit')?'checked':'') ?>>
                                                         <label for="" class="">Debit</label>
-                                                        <input name="accountType" id="accountType" type="radio" class="" value="credit">
+                                                        <input name="accountType" id="accountType" type="radio" class="" value="credit" <?php echo((isset($transaction_info->accountType) && !empty($transaction_info->accountType) && $transaction_info->accountType == 'Credit')?'checked':'') ?>>
                                                         <label for="" class="">Credit</label>
                                                     </div>
                                                      <div class="position-relative form-group col-md-6" style="display: none;">

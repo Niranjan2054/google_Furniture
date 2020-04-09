@@ -9,7 +9,12 @@ if (isset($_GET) && !empty($_GET)) {
                 $customer = $Customer->getCustomerById($Customer_id);
                 if ($customer) {
                     $customer = $customer[0];
-                    // debugger($customer,true);
+                    if (isset($_GET['transaction_id']) && !empty($_GET['transaction_id'])) {
+                        $transaction_id = (int)$_GET['transaction_id'];
+                        $Transaction = new transaction();
+                        $transaction_info = $Transaction->getTransactionById($transaction_id);
+                        $transaction_info=$transaction_info[0];
+                    }
                 }else{
                     setFlash('./customer','error','Data not found');
                 }
