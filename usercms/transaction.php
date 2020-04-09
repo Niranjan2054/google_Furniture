@@ -35,7 +35,7 @@
                                         if (isset($_GET) && !empty($_GET)) {
                                     ?>
                                     <div class="d-inline-block dropdown">
-                                        <a href="javascript:; " type="button" class="btn-shadow  btn btn-primary">
+                                        <a href="generatereport?id=<?php echo $Customer_id ?>&amp;act=<?php echo $_GET['act'] ?>" type="button" class="btn-shadow  btn btn-primary">
                                             Generate Report
                                         </a>
                                     </div>
