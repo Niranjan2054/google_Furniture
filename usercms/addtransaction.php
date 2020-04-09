@@ -56,6 +56,10 @@
                                             <div class="card-body"><h5 class="card-title">Purchases</h5>
                                                 <form method="post" action="process/transaction">
                                                     <div class="position-relative form-group col-md-6">
+                                                        <label for="">Date</label>
+                                                        <input type="text" name="transaction_date" class="form-control" data-toggle="datepicker-month" value="<?php echo ((isset($transaction_info->transaction_date) && !empty($transaction_info->transaction_date))?$transaction_info->transaction_date:'') ?>" />
+                                                    </div>
+                                                    <div class="position-relative form-group col-md-6">
                                                         <label for="exampleAddress" class="">Furniture</label>
                                                         <select name="furniture_id" id="" class="form-control">
                                                             <option value="" disabled="" selected="">--Select Furniture--</option>
@@ -65,7 +69,7 @@
                                                             if ($furnitures) {
                                                                 foreach ($furnitures as $key => $furniture) {
                                                         ?>
-                                                            <option value="<?php echo $furniture->id ?> " <?php echo (($transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
+                                                            <option value="<?php echo $furniture->id ?> " <?php echo ((isset($transaction_info->furniture_id ) && !empty($transaction_info->furniture_id ) && $transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
                                                         <?php
                                                                 }
                                                             }
@@ -103,6 +107,10 @@
                                             <div class="card-body"><h5 class="card-title">Sales</h5>
                                                 <form method="post" action="process/transaction">
                                                     <div class="position-relative form-group col-md-6">
+                                                        <label for="">Date</label>
+                                                        <input type="text" name="transaction_date" class="form-control" data-toggle="datepicker-month" value="<?php echo ((isset($transaction_info->transaction_date) && !empty($transaction_info->transaction_date))?$transaction_info->transaction_date:'') ?>" />
+                                                    </div>
+                                                    <div class="position-relative form-group col-md-6">
                                                         <label for="exampleAddress" class="">Furniture</label>
                                                         <select name="furniture_id" id="" class="form-control">
                                                             <option value="" disabled="" selected="">--Select Furniture--</option>
@@ -112,7 +120,7 @@
                                                             if ($furnitures) {
                                                                 foreach ($furnitures as $key => $furniture) {
                                                         ?>
-                                                            <option value="<?php echo $furniture->id ?>" <?php echo (($transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
+                                                            <option value="<?php echo $furniture->id ?>" <?php echo ((isset($transaction_info->furniture_id ) && !empty($transaction_info->furniture_id ) && $transaction_info->furniture_id == $furniture->id)?'selected':''); ?>><?php echo $furniture->furniturename; ?></option>
                                                         <?php
                                                                 }
                                                             }
@@ -151,3 +159,4 @@
 <?php 
     include 'inc/footer.php'
  ?>
+<script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-pro/assets/scripts/main.87c0748b313a1dda75f5.js"></script>

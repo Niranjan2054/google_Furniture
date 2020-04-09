@@ -9,7 +9,7 @@
 					'no_of_piece' => (int)($_POST['no_of_piece']),
 					'accountType' => sanitize($_POST['accountType']),
 					'type' => sanitize($_POST['type']),
-					'transaction_date' =>'',
+					'transaction_date' =>sanitize($_POST['transaction_date']),
 					'added_by' => $_SESSION['user_id']
 				);
 		if (isset($_POST['id']) && !empty($_POST['id'])) {
