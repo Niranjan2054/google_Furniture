@@ -31,6 +31,11 @@
                                             Add Transaction
                                         </a>
                                     </div>
+                                     <div class="d-inline-block dropdown">
+                                        <a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " type="button" class="btn-shadow  btn btn-primary">
+                                            Generate Report
+                                        </a>
+                                    </div>
                                 </div>    
                             </div>
                         </div>  

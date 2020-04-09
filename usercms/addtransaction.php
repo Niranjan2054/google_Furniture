@@ -32,6 +32,14 @@
                                          ?>
                                     </div>
                                 </div>
+                                    <div class="page-title-actions">
+                                        <div class="d-inline-block dropdown">
+                                        <a href="transaction?id=<?php echo $Customer_id ?>&amp;act=<?php echo $_GET['act'] ?>" type="button" class="btn-shadow  btn btn-info">
+                                            View Transaction
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div> 
                             </div>
                         </div>  
 
