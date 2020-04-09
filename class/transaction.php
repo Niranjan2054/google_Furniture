@@ -69,7 +69,8 @@ class transaction extends database{
 					'and' => array(
 						'customer_id' => $customer_id
 					)
-				)
+				),
+			'order' => 'ASC'
 		);
 		return $this->selectdata($args,$is_die);
 	}
