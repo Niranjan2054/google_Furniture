@@ -33,11 +33,11 @@
 			if (isset($_GET['act']) && !empty($_GET['act']) && $act == $_GET['act']) {
 				$transaction_id = (int)$_GET['id'];
 				$Transactions_info = $transaction->getTransactionById($transaction_id);
-				debugger($Transactions_info);
+				// debugger($Transactions_info,true);
 				if ($Transactions_info) {
 					$success = $transaction->deleteTransactionbyId($Transactions_info[0]->id);
 					if ($success) {
-						setFlash('../transaction','success','Transactions Deleted Successfully');
+						setFlash('../transaction?id='.$Transactions_info[0]->customer_id.'&act='.substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$Transactions_info[0]->customer_id), 3,15),'success','Transactions Deleted Successfully');
 					}else{
 						setFlash('../transaction','error','Error While Deleting Transactions');
 					}

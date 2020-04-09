@@ -1,6 +1,6 @@
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'config/init.php';
-debugger($_POST);
+// debugger($_POST,true);
 $data = array();
 if (isset($_POST) && !empty($_POST)) {
 	if (isset($_POST['username']) && !empty($_POST['username'])) {
@@ -51,6 +51,41 @@ if (isset($_POST) && !empty($_POST)) {
 			}
 		}else{
 			setFlash('../login','error','Invalid Username. Username must be Email Type.');
+		}
+	}else if(isset($_POST['transaction_id']) && !empty($_POST['transaction_id'])){
+		// sabai kaam transaction sambhandi
+		$data['username'] = $_SESSION['admin_name'];
+		if ($data['username']) {
+			if (isset($_POST['password']) && !empty($_POST['password'])) {
+				$data['password']=sha1($data['username'].$_POST['password']);
+				$user = new user();
+				$user_info= $user->getUserByEmail($data['username']);
+				if (isset($user_info[0]->username) && !empty($user_info[0]->username)) {
+					if ($user_info[0]->password ==$data['password']) {
+						if ($user_info[0]->role =="Admin") {
+							if ($user_info[0]->status == "Active") {
+							 	$Transaction = new transaction();
+					          	$transaction = $Transaction->getTransactionById((int)$_POST['transaction_id']);
+					          	$transaction = $transaction[0];
+					          	if ($transaction) {
+									setFlash('transaction?id='.$transaction->id.'&act='.substr(md5('Transactions-'.$transaction->id.'-'.$_SESSION['token']),3,15),'','');
+			          			}			
+							}else{
+								setFlash('../login','error','This account is not active. Do contact Adminstration.');
+							}
+						}else{
+							setFlash('../login','error','You are not allowed to logged in Here.');
+						}
+
+					}else{
+						setFlash('../login','error','Password doesnot matched.');
+					}
+				}
+				debugger($_SESSION);
+				setFlash('../login','error','Email Doesnot Matched.');
+			}else{
+				setFlash('../login','error','Password Required.');
+			}
 		}
 	}else{
 		setFlash('../login','error','Username Required');

@@ -78,10 +78,10 @@
                                                         <td><?php echo $price; ?></td>
                                                         <td><?php echo $price*$transaction->no_of_piece; ?></td>
                                                         <td>
-                                                            <a href="addtransaction?id=<?php echo $transaction->id ?>&amp;act=<?php  echo(substr(md5('Transaction-Edit'.$_SESSION['token'].'id='.$transaction->id), 3,15))?> " class="btn btn-shadow btn-secondary">
+                                                            <a href="javascript:;" class="btn btn-shadow btn-secondary">
                                                                 Edit
                                                             </a>
-                                                            <a href="process/transaction?id=<?php echo $transaction->id ?>&amp;act=<?php  echo(substr(md5('Transactions-'.$transaction->id.'-'.$_SESSION['token']),3,15))?> " class="btn btn-shadow btn-danger">
+                                                            <a href="login?id=<?php echo $transaction->id ?>&amp;act=<?php  echo(substr(md5('Delete-Transactions-'.$transaction->id.'-'.$_SESSION['token']),3,15))?>&amp;dir=transaction" class="btn btn-shadow btn-danger">
                                                                 Delete
                                                             </a>
                                                         </td>
