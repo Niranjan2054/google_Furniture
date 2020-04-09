@@ -31,11 +31,25 @@
                                             Add Transaction
                                         </a>
                                     </div>
-                                     <div class="d-inline-block dropdown">
-                                        <a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " type="button" class="btn-shadow  btn btn-primary">
+                                    <?php 
+                                        if (isset($_GET) && !empty($_GET)) {
+                                    ?>
+                                    <div class="d-inline-block dropdown">
+                                        <a href="javascript:; " type="button" class="btn-shadow  btn btn-primary">
                                             Generate Report
                                         </a>
                                     </div>
+                                    <?php
+                                        }else{
+                                    ?>
+                                    <div class="d-inline-block dropdown">
+                                        <a href="javascript:; " type="button" class="btn-shadow  btn btn-primary">
+                                            Show Profit/Loss
+                                        </a>
+                                    </div>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>    
                             </div>
                         </div>  
