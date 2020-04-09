@@ -19,5 +19,7 @@ if (isset($_GET) && !empty($_GET)) {
         }else{
             setFlash('./customer','error','Invalid ID');
         }
+    }else{
+        setFlash('./customer','error','Select Customer First');
     }
 ?>
