@@ -1,6 +1,6 @@
 <?php 
 
-	class Nepali_Calendar {
+	class nepali_calendar {
 		private $bs = array(
 			0=>array(2000,30,32,31,32,31,30,30,30,29,30,29,31),
 			1=>array(2001,31,31,32,31,31,31,30,29,30,29,30,30),
@@ -465,6 +465,12 @@
 				
 				return $this->eng_date;			
 			}
+		}
+		public function English_to_Nepali($Eng){
+			$data = explode('/', $Eng);
+			$nepali = $this->eng_to_nep($data['2'],$data['0'],$data['1']);
+			// print_r($nepali);
+			echo $nepali['nmonth'].'/'.$nepali['date'].'/'.$nepali['year'];
 		}
 	
 	};

@@ -42,6 +42,7 @@
                                         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                             <thead>
                                             <tr>
+                                                <th>S.N</th>
                                                 <th>Nepali Date</th>
                                                 <th>English Date</th>
                                                 <th>Description</th>
@@ -54,6 +55,7 @@
                                                 <?php 
                                                     if ($transactions) {
                                                         $totabalance =0;
+                                                        $converter = new nepali_calendar();
                                                         foreach ($transactions as $key => $transaction) {
                                                             if ($transaction->type == 'sale') {
                                                                 $price = $transaction->saleprice;
@@ -68,7 +70,8 @@
                                                             }
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo ""; ?></td>
+                                                        <td><?php echo $key +1; ?></td>
+                                                        <td><?php echo $converter->English_to_Nepali($transaction->transaction_date); ?></td>
                                                         <td><?php echo $transaction->transaction_date; ?></td>
                                                         <td><?php echo $transaction->furniturename; ?></td>
                                                         <td><?php echo ((isset($transaction->accountType) && !empty($transaction->accountType) && $transaction->accountType=='Debit')?$totalprice:''); ?></td>

@@ -72,6 +72,8 @@ class transaction extends database{
 		$args = array(
 			'fields' => array(
 				'id',
+				'customer_id',
+				'furniture_id',
 				'(SELECT name FROM customers WHERE id = customer_id) as customername',
 				'(SELECT furniturename from furnitures WHERE id = furniture_id) as furniturename',
 				'(SELECT saleprice from furnitures WHERE id = furniture_id) as saleprice',
