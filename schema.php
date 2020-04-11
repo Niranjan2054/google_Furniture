@@ -55,6 +55,7 @@
 			created_date datetime default current_timestamp,
 			updated_date datetime on update current_timestamp
 		)",
+		"Create Super user" => "INSERT INTO `users`(`username`, `email`, `password`, `role`) VALUES ('admin','admin@gmail.com',sha1('adminadmin'),'Admin')",
 		
 	);
 	foreach ($table as $key => $sql) {

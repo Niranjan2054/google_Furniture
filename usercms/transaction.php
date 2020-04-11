@@ -26,14 +26,14 @@
 
                                 <div class="page-title-actions">
                                     
+                                    <?php 
+                                        if (isset($_GET) && !empty($_GET)) {
+                                    ?>
                                     <div class="d-inline-block dropdown">
                                         <a href="addtransaction?id=<?php echo $customer->id ?>&amp;act=<?php  echo(substr(md5('Add-Transaction'.$_SESSION['token'].'id='.$customer->id), 3,15))?> " type="button" class="btn-shadow  btn btn-info">
                                             Add Transaction
                                         </a>
                                     </div>
-                                    <?php 
-                                        if (isset($_GET) && !empty($_GET)) {
-                                    ?>
                                     <div class="d-inline-block dropdown">
                                         <a href="generatereport?id=<?php echo $Customer_id ?>&amp;act=<?php echo $_GET['act'] ?>" type="button" class="btn-shadow  btn btn-primary">
                                             Generate Report
