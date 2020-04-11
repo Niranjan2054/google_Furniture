@@ -39,6 +39,11 @@
                                             Generate Report
                                         </a>
                                     </div>
+                                    <div class="d-inline-block dropdown">
+                                        <a href="profitloss?id=<?php echo $Customer_id ?>&amp;act=<?php echo $_GET['act'] ?>" type="button" class="btn-shadow  btn btn-secondary">
+                                            Profit Calculation
+                                        </a>
+                                    </div>
                                     <?php
                                         }else{
                                     ?>
