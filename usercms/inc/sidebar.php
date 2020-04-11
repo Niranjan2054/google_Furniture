@@ -63,40 +63,6 @@
                                         Transaction
                                     </a>
                                 </li>
-                                <li class="app-sidebar__heading">Forms</li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="metismenu-icon pe-7s-mouse">
-                                        </i>Forms Controls
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="metismenu-icon pe-7s-eyedropper">
-                                        </i>Forms Layouts
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="metismenu-icon pe-7s-pendrive">
-                                        </i>Forms Validation
-                                    </a>
-                                </li>
-                                <li class="app-sidebar__heading">Charts</li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="metismenu-icon pe-7s-graph2">
-                                        </i>chart
-                                    </a>
-                                </li>
-                                <li class="app-sidebar__heading">PRO Version</li>
-                                <li>
-                                    <a href="javascript:;" target="_blank">
-                                        <i class="metismenu-icon pe-7s-graph2">
-                                        </i>
-                                        Upgrade to PRO
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
