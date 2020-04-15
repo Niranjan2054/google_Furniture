@@ -57,16 +57,8 @@
                                                         $totabalance =0;
                                                         $converter = new nepali_calendar();
                                                         foreach ($transactions as $key => $transaction) {
-                                                            if ($transaction->type == 'sale') {
-                                                                $price = $transaction->saleprice;
-                                                            }else{
-                                                                $price = $transaction->purchaseprice;
-                                                            }
-                                                            $totalprice = $price * $transaction->no_of_piece;
-                                                            if ($transaction->accountType=='Debit') {
-                                                                $totabalance = $totabalance + $totalprice;
-                                                            }else{
-                                                                $totabalance = $totabalance - $totalprice;
+                                                            if ($transaction->type == 'purchase') {
+                                                                continue;
                                                             }
                                                     ?>
                                                     <tr>
