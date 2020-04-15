@@ -69,7 +69,7 @@
                                             <tr>
                                                 <th>S.N</th>
                                                 <th>Customer name</th>
-                                                <th>Furniture name</th>
+                                                <th>Particular</th>
                                                 <th>Account Type</th>
                                                 <th>Transaction Date</th>
                                                 <th>Type</th>
